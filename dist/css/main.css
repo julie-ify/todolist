@@ -66,8 +66,7 @@ body {
       text-transform: uppercase; }
       #main #input-wrap input[type="submit"]:hover, #main #input-wrap input[type="submit"]:focus {
         background-color: #22c4ab; }
-  #main h2,
-  #main h4 {
+  #main h2 {
     font-weight: 500;
     margin-bottom: 0.5rem;
     color: #444; }
@@ -81,18 +80,23 @@ body {
     #main ul li {
       border-bottom: 1px solid #1eae98;
       padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      text-align: center;
+      padding-bottom: 2rem;
       text-align: center; }
+      #main ul li h4 {
+        float: left;
+        font-weight: 500;
+        color: #444; }
+      #main ul li .btn {
+        background-color: #e60000;
+        border: none;
+        padding: 0.2rem 0.4rem;
+        border-radius: 2px;
+        cursor: pointer;
+        float: right;
+        text-align: center; }
     #main ul:last-child {
       border-bottom: none; }
-    #main ul .btn {
-      background-color: #e60000;
-      border: none;
-      padding: 0.2rem 0.4rem;
-      border-radius: 2px;
-      cursor: pointer; }
 
 footer {
   text-align: center;

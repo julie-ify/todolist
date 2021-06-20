@@ -1,15 +1,14 @@
 // Get  Element by DOM
-const searchBtn = document.getElementById("search");
+const search = document.getElementById("search");
 const listItems = document.getElementById("list-items");
-const listItem = document.querySelectorAll(".list-item");
 const addList = document.getElementById("input-add");
 const form = document.getElementById("input-wrap");
-// const deleteBtn = document.querySelectorAll(".btn");
+var listItem = document.querySelectorAll("li");
 
 // Add eventlistener to form
-form.addEventListener("submit", searchItem);
+form.addEventListener("submit", addItem);
 
-function searchItem(e) {
+function addItem(e) {
   //prevent default form submission by html
   e.preventDefault();
 
@@ -31,18 +30,44 @@ function searchItem(e) {
   listItems.append(newList);
 }
 
+// add event to the ul
+listItems.addEventListener("click", deleteItem);
+function deleteItem(e) {
+  if (e.target.classList.contains("btn")) {
+    if (confirm("Are you sure?")) {
+      let badItem = e.target.parentElement;
+      listItems.removeChild(badItem);
+    }
+  }
+}
+
+// Search event
+search.addEventListener("keyup", searchItem);
+
+function searchItem(e) {
+  var searchText = e.target.value.toLowerCase();
+  Array.from(listItem).forEach((item) => {
+    var itemName = item.firstElementChild.textContent;
+    if(itemName.toLowerCase().indexOf(searchText) != -1){
+      item.style.display = 'block';
+    }else{
+      item.style.display = 'none';
+    }
+  });
+}
+
 //Delete item function
-  
-  // for (let i = 0; i < deleteBtn.length; i++) {
-  //   deleteBtn[i].addEventListener("click", deleteItem);
-  // }
-  // function deleteItem() {
-  //   if(confirm('Are you sure?')){
-  //     let badItem = this.parentElement;
-  //     listItems.removeChild(badItem);
-      
-  //   }
-  // }
+
+// for (let i = 0; i < deleteBtn.length; i++) {
+//   deleteBtn[i].addEventListener("click", deleteItem);
+// }
+// function deleteItem() {
+//   if(confirm('Are you sure?')){
+//     let badItem = this.parentElement;
+//     listItems.removeChild(badItem);
+
+//   }
+// }
 
 // deleteBtn.forEach((item) => {
 //   item.addEventListener('click', deleteItem);
@@ -51,23 +76,8 @@ function searchItem(e) {
 //       if(confirm('Are you sure?')){
 //         let badItem = this.parentElement;
 //         listItems.removeChild(badItem);
-        
+
 //       }
 //     }
 //     }
 // })
-
-listItems.addEventListener('click', deleteItem);
-
-function deleteItem(e) {
-  if(e.target.classList.contains('btn')){
-    if(confirm('Are you sure?')){
-      let badItem = e.target.parentElement;
-      listItems.removeChild(badItem);
-      
-    }
-  }
-  }
-
-  
-

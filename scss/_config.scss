@@ -1,0 +1,19 @@
+//media querry for mobile phone screen and below
+@mixin mediaSm {
+  @media screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@include mediaSm {
+  #header {
+    margin-bottom: 0.5rem;
+    .header-wrap {
+      display: block;
+
+      h1 {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
