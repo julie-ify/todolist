@@ -1,4 +1,5 @@
-$primary-color: #444;
+$primary-color: #A9F1DF;
+$secondary-color: #1EAE98;
 
 * {
   margin: 0;
@@ -8,6 +9,40 @@ $primary-color: #444;
 
 body {
   background-color: $primary-color;
-  font-size: 4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.2;
+  font-size: 1rem;
+}
+
+#header {
+  background-color: $secondary-color;
+
+  .header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 10%;
+
+    h1 {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      height: 35px;
+      color: #444;
+      outline: none;
+      border: none;
+      padding: 0.3rem 1rem;
+      // cursor: text;
+      box-shadow: 0 0 3px #444;
+
+      &:hover, &:focus {
+        border: 1px solid #444;
+      }
+    }
+
+  }
 
 }
