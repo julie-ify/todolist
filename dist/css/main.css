@@ -100,3 +100,11 @@ footer {
   height: 50px;
   padding: 1rem 0;
   color: #fff; }
+
+@media screen and (max-width: 600px) {
+  #header {
+    margin-bottom: 0.5rem; }
+    #header .header-wrap {
+      display: block; }
+      #header .header-wrap h1 {
+        margin-bottom: 0.5rem; } }
