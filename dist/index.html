@@ -8,13 +8,44 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <header id="header">
-      <div class="header-wrap">
-        <div class="header-text"><h1>Item Lister</h1></div>
-        <div id="header-input">
-          <input type="text" class="search" />
+    <div style="min-height: calc(100vh - 50px)">
+      <header id="header">
+        <div class="header-wrap">
+          <div class="header-text"><h1>Item Lister</h1></div>
+          <div id="header-input">
+            <input type="text" id="search" placeholder="Search items..." />
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <section id="main">
+        <h1 class="big-heading">Add Items</h1>
+        <form id="input-wrap">
+          <input type="text" id="input-add" placeholder="Add items" />
+          <input type="submit" id="submit" />
+        </form>
+
+        <h2 class="medium-heading">Items</h2>
+        <ul id="list-items">
+          <li id="list-item" class="item1">
+            <h4>Item 1</h4>
+            <button class="btn" id="button">X</button>
+          </li>
+          <li id="list-item" class="item2">
+            <h4>Item 2</h4>
+            <button class="btn" id="button">X</button>
+          </li>
+          <li id="list-item" class="item3">
+            <h4>Item 3</h4>
+            <button class="btn" id="button">X</button>
+          </li>
+          <li id="list-item" class="item4">
+            <h4>Item 4</h4>
+            <button class="btn" id="button">X</button>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>made with ❤ from May</footer>
   </body>
 </html>
